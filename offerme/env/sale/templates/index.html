@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%load static%}
+    {% block content %}
+
+    <section class="cf w-100 pa2-ns">
+    	{% for item in items%}
+  <article class="fl w-100 w-50-m  w-25-ns pa2-ns">
+    <div class="aspect-ratio aspect-ratio--1x1">
+      <a href="http://127.0.0.1:8000/listing/{{item.slug}}"><img src="{{item.image.url}}" 
+      class="db bg-center cover aspect-ratio--object" ></a>
+    </div>
+    <a href="#0" class="ph2 ph0-ns pb3 link db">
+      <h3 class="f5 f4-ns mb0 black-90">{{item.title}}</h3>
+      <h3 class="f6 f5 fw4 mt2 black-60">{{item.location}}</h3>
+
+      <h3 class="f6 f5 fw4 mt2 black-60">${{item.price}}</h3>
+    </a>
+  </article>
+  {% endfor %}
+</section>
+
+    {% endblock content %}
